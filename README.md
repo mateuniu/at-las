@@ -1,4 +1,4 @@
-hello everyone :)
+hello :)
 
 this is my very first project. i am fascinated in programing and mushrom world so i decidet to combine both and this is a result: demo of my first website. 
 
