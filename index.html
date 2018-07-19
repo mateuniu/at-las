@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head><meta http-equiv="Content-Type" content="text/html; charset=gb18030">
+<title>AT:LAS</title>
+<!--FAVICON-->
+<link rel="Shortcut icon" href="templates/images/borowik-sosnowy-fav.png"/>
+<meta name="msapplication-TileColor" content="#00aba9">
+<meta name="theme-color" content="#ffffff">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" value="Aplikacja zawieraj膮ca podstawowe informacje na temat wybranych gatunk贸w grzyb贸w.">
+<meta name="keywords" value="grzyb, grzyby, grzybobranie, las">
+<meta name="autor" value="Mateusz Gajewski">
+<link rel="stylesheet" type="text/css" href="main.css">
+<link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700|Inconsolata:400,700|Lato:300" rel="stylesheet">
+<!--ANGULAR JS-->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	<script type="text/javascript" src="angular-toggle.js"></script>
+<!--ANGULAR ROUTE-->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+<script type="text/javascript" src="angular-routing.js"></script>
+</head>
+<!--ANGULAR APPLICATION-->
+<body ng-app="atlasApp" ng-controller="myCtrl">
+<!--HEADER CONTAINER-->
+	<header>
+<!--ROW CONTAINER-->
+		<div class="row">
+<!--TITLE CONTAINER-->
+			<div class="col-6">
+				<a href="#" class="title">at:las</a> 
+			</div>
+			<hr class="hr-head">
+<!--SOCIALMEDIA CONTAINER-->
+			<div class="col-4">
+				<div class="socialmedia-container">
+					<a href="https://www.instagram.com/at_las_/" target="_blank">
+						<img src="templates/icons/instagram-icon.png" class="socialmedia-icon" title="instagram" alt="instagram icon">
+					</a>
+					<a href="">
+						<img src="templates/icons/facebook-icon.png" class="socialmedia-icon" title="facebook" alt="facebook icon">
+					</a>
+				</div>
+			</div>
+		</div>
+<!--NAV BAR CONTAINER-->
+		<nav>
+			<div class="row">
+				<div class="col-6">
+<!--NAV BAR FOR SMALL DEVICES-->
+					<div class="nav-bar-small">
+<!--MENU BUTTON-->
+						<div ng-click="displayMenuSmall()">
+							<img src="templates/icons/menu-icon.png" class="nav-bar-small-burger">
+						</div>
+<!--MENU CONTAINER-->
+							<div ng-show="menuSmall" class="category-container">
+<!--TIME CONTAINER-->
+								<div ng-click="displayTime()" class="nav-bar-small-item">
+									<img src="templates/icons/time-icon.png" class="category-icon" alt="category icon" title="category icon">
+									<p>czas</p>
+								</div>
+								<ul ng-show="timeContainer" class="category-container">
+    								<li class="category">
+    									<a href="#!/wiosna">wiosna</a>
+    								</li>
+    								<li  class="category">
+    									<a href="#!/lato">lato</a>
+    								</li>
+    								<li  class="category">
+    									<a href="#!/jesien">jesień</a>
+    								</li>
+    								<li class="category">
+    									<a href="#!/no-mushroom">zima</a>
+    								</li>
+    							</ul>
+    							<hr>
+<!--PLACE CONTAINER-->
+								<div ng-click="displayPlace()" class="nav-bar-small-item">
+									<img src="templates/icons/place-icon.png" class="category-icon" alt="category icon" title="category icon">
+									<p>miejsce</p>
+								</div>
+								<ul ng-show="placeContainer" class="category-container">
+   									<li class="category">
+    									<a href="#!las-iglasty">las iglasty</a>
+    								</li>
+    								<li class="category">
+    									<a href="#!las-mieszany">las liściasty</a>
+    								</li>
+    								<li class="category">
+    									<a href="#!no-mushroom">ogródki i łąki</a>
+    								</li>
+    								<li class="category">
+    									<a href="#!tereny-podmokle">tereny podmokłe</a>
+    								</li>
+    								<li class="category">
+    									<a href="#!drewno">drewno</a>
+    								</li>
+								</ul>
+								<hr>
+<!--EAT CONTAINER-->
+								<div ng-click="displayGastro()" class="nav-bar-small-item">
+									<img src="templates/icons/eat-icon.png" class="category-icon" alt="category icon" title="category icon"></img>
+									<p>gastro</p>
+								</div>
+								<ul ng-show="gastroContainer" class="category-container">
+									<li class="category">
+    									<a href="#!jadalny">jadalny</a>
+    								</li>
+    								<li class="category">
+    									<a href="#!niezdatny">niezdatny</a>
+    								</li>
+    								<li class="category">
+    									<a href="#!trujacy"><span class="bold-color">trujący</span></a>
+    								</li>
+    							</ul>
+    							<hr>
+<!--ABC CONTAINER-->			
+								<div ng-click="displayAbc()" class="nav-bar-small-item">
+									<p class="nav-bar-small-item-abc">ABC</p>
+									<p>alfa</p>
+								</div>
+								<div ng-show="abcContainer" class="category-container-abc">
+    								<div>
+    									<a href="#!no-mushroom" class="category-abc">- a -</a>
+    								</div>
+    								<div>
+    									<a href="#!abc-b" class="category-abc">- b -</a>
+    								</div>
+    								<div>
+    									<a href="#!no-mushroom" class="category-abc">- c -</a>
+    								</div>
+    								<div>
+    									<a href="#!no-mushroom" class="category-abc">- d -</a>
+    								</div>
+    								<div>
+    									<a href="#!no-mushroom" class="category-abc">- e -</a>
+    								</div>
+    								<div>
+    									<a href="#!no-mushroom" class="category-abc">- f -</a>
+    								</div>
+    								<div>
+    									<a href="#!abc-g" class="category-abc">- g -</a>
+    								</div>
+    								<div>
+    									<a href="#!no-mushroom" class="category-abc">- h -</a>
+    								</div>
+    								<div>
+    									<a href="#!no-mushroom" class="category-abc">- i -</a>
+    								</div>
+    								<div>
+    									<a href="#!no-mushroom" class="category-abc">- j -</a>
+    								</div>
+    								<div>
+    									<a href="#!no-mushroom" class="category-abc">- k -</a>
+    								</div>
+    								<div>
+    									<a href="#!abc-l" class="category-abc">- l -</a>
+    								</div>
+    								<div>
+    									<a href="#!abc-m" class="category-abc">- m -</a>
+    								</div>
+    								<div>
+    									<a href="#!no-mushroom" class="category-abc">- n -</a>
+    								</div>
+    								<div>
+    									<a href="#!abc-o" class="category-abc">- o -</a>
+    								</div>
+    								<div>
+    									<a href="#!abc-p" class="category-abc">- p -</a>
+    								</div>
+    								<div>
+    									<a href="#!no-mushroom" class="category-abc">- r -</a>
+    								</div>
+    								<div>
+    									<a href="#!no-mushroom" class="category-abc">- s -</a>
+    								</div>
+    								<div>
+    									<a href="#!no-mushroom" class="category-abc">- t -</a>
+    								</div>
+    								<div>
+    									<a href="#!no-mushroom" class="category-abc">- u -</a>
+    								</div>
+    								<div>
+    									<a href="#!abc-w" class="category-abc">- w -</a>
+    								</div>
+    								<div>
+    									<a href="#!no-mushroom" class="category-abc">- x -</a>
+    								</div>
+    								<div>
+    									<a href="#!no-mushroom" class="category-abc">- y -</a>
+    								</div>
+    								<div>
+    									<a href="#!no-mushroom" class="category-abc">- z -</a>
+    								</div>	
+    							</div>
+    						</div>
+					</div>
+				</div>
+<!--FOR TABLETS AND BIG SCREENS-->
+				<div class="nav-bar-big">
+<!---TIMIE CONTAINER-->
+					<div class="nav-bar-item"><strong>czas</strong>
+<!--HOOVER TOP-->
+						<div class="nav-bar-item-hover-top">
+							<div class="submenu-item-top">
+								<img src="templates/icons/time-icon.png" class="category-icon" alt="category icon" title="category icon">
+							</div>
+						</div>
+<!--HOOVER BOTTOM-->
+					 	<div class="nav-bar-item-hover-bottom">
+							<ul>
+								<li class="submenu-item">
+									<a href="#!wiosna" class="submenu-item-hover-underline">wiosna</a>
+								</li>
+								<li class="submenu-item">
+									<a href="#!lato" class="submenu-item-hover-underline">lato</a>
+								</li>
+								<li class="submenu-item">
+									<a href="#!jesien" class="submenu-item-hover-underline">jesień</a>
+								</li>
+								<li class="submenu-item">
+									<a href="#!no-mushroom" class="submenu-item-hover-underline">zima</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+<!--PLACE CONTAINER-->
+					<div class="nav-bar-item"><strong>miejsce</strong>
+<!--HOOVER TOP-->
+						<div class="nav-bar-item-hover-top">
+							<div class="submenu-item-top">
+								<img src="templates/icons/place-icon.png" class="category-icon" alt="category icon" title="category icon">
+							</div>
+						</div>
+<!--HOOVER BOTTOM-->
+						<div class="nav-bar-item-hover-bottom">
+							<ul>
+								<li class="submenu-item">
+									<a href="#!las-iglasty" class="submenu-item-hover-underline">las iglasty</a>
+								</li>
+								<li class="submenu-item">
+									<a href="#!las-mieszany" class="submenu-item-hover-underline">las mieszany</a>
+								</li>
+								<li class="submenu-item">
+									<a href="#!no-mushroom" class="submenu-item-hover-underline">ogrody oraz łąki</a>
+								</li>
+								<li class="submenu-item">
+									<a href="#!tereny-podmokle" class="submenu-item-hover-underline">tereny podmokłe</a>
+								</li>
+								<li class="submenu-item">
+									<a href="#!drewno" class="submenu-item-hover-underline">drewno</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+<!--EAT CONTAINER-->
+					<div class="nav-bar-item"><strong>gastro</strong>
+<!--HOOVER TOP-->
+						<div class="nav-bar-item-hover-top">
+							<div class="submenu-item-top">
+								<img src="templates/icons/eat-icon.png" class="category-icon" alt="category icon" title="category icon">
+							</div>
+						</div>
+<!--HOOVER BOTTOM-->
+						<div class="nav-bar-item-hover-bottom">
+							<ul>
+								<li class="submenu-item">
+									<a href="#!jadalny" class="submenu-item-hover-underline">jadalny</a>
+								</li>
+								<li class="submenu-item">
+									<a href="#!niezdatny" class="submenu-item-hover-underline">niezdatny</a>
+								</li>
+								<li class="submenu-item">
+									<a href="#!trujacy" class="submenu-item-hover-underline">
+										<span class="bold-color">trujący</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+<!--ABC CONTAINER-->
+					<div class="nav-bar-item"><strong>alfa</strong>
+<!--HOOVER TOP-->
+						<div class="nav-bar-item-hover-top">
+							<div class="submenu-item-top">
+								<p class="category-icon">ABC</p>
+							</div>
+						</div>
+<!--HOOVER BOTTOM-->
+						<div class="nav-bar-item-hover-bottom">
+							<div class="submenu-item-abc">
+								<a href="#!no-mushroom" class="submenu-item-hover-underline">- a -</a>
+							</div>
+							<div class="submenu-item-abc">
+								<a href="#!abc-b" class="submenu-item-hover-underline">- b -</a>
+							</div>
+							<div class="submenu-item-abc">
+								<a href="#!no-mushroom" class="submenu-item-hover-underline">- c -</a>
+							</div>
+							<div class="submenu-item-abc">
+								<a href="#!no-mushroom" class="submenu-item-hover-underline">- d -</a>
+							</div>
+							<div class="submenu-item-abc">
+								<a href="#!no-mushroom" class="submenu-item-hover-underline">- e -</a>
+							</div>
+							<div class="submenu-item-abc">
+								<a href="#!no-mushroom" class="submenu-item-hover-underline">- f -</a>
+							</div>
+							<div class="submenu-item-abc">
+								<a href="#!abc-g" class="submenu-item-hover-underline">- g -</a>
+							</div>
+							<div class="submenu-item-abc">
+								<a href="#!no-mushroom" class="submenu-item-hover-underline">- h -</a>
+							</div>
+							<div class="submenu-item-abc">
+								<a href="#!no-mushroom" class="submenu-item-hover-underline">- i -</a>
+							</div>
+							<div class="submenu-item-abc">
+								<a href="#!no-mushroom" class="submenu-item-hover-underline">- j -</a>
+							</div>
+							<div class="submenu-item-abc">
+								<a href="#!no-mushroom" class="submenu-item-hover-underline">- k -</a>
+							</div>
+							<div class="submenu-item-abc">
+								<a href="#!abc-l" class="submenu-item-hover-underline">- l -</a>
+							</div>
+							<div class="submenu-item-abc">
+								<a href="#!abc-m" class="submenu-item-hover-underline">- m -</a>
+							</div>
+							<div class="submenu-item-abc">
+								<a href="#!no-mushroom" class="submenu-item-hover-underline">- n -</a>
+							</div>
+							<div class="submenu-item-abc">
+								<a href="#!abc-o" class="submenu-item-hover-underline">- o -</a>
+							</div>
+							<div class="submenu-item-abc">
+								<a href="#!abc-p" class="submenu-item-hover-underline">- p -</a>
+							</div>
+							<div class="submenu-item-abc">
+								<a href="#!no-mushroom" class="submenu-item-hover-underline">- r -</a>
+							</div>
+							<div class="submenu-item-abc">
+								<a href="#!no-mushroom" class="submenu-item-hover-underline">- s -</a>
+							</div>
+							<div class="submenu-item-abc">
+								<a href="#!no-mushroom" class="submenu-item-hover-underline">- t -</a>
+							</div>
+							<div class="submenu-item-abc">
+								<a href="#!no-mushroom" class="submenu-item-hover-underline">- u -</a>
+							</div>
+							<div class="submenu-item-abc">
+								<a href="#!abc-w" class="submenu-item-hover-underline">- w -</a>
+							</div>
+							<div class="submenu-item-abc">
+								<a href="#!no-mushroom" class="submenu-item-hover-underline">- x -</a>
+							</div>
+							<div class="submenu-item-abc">
+								<a href="#!no-mushroom" class="submenu-item-hover-underline">- y -</a>
+							</div>
+							<div class="submenu-item-abc">
+								<a href="#!no-mushroom" class="submenu-item-hover-underline">- z -</a>
+							</div>
+						</div>
+					</div>
+				</div>
+		</nav>
+	</header>
+<!--MAIN CONTAINER-->	
+	<main>
+<!--NG-VIEW CONTAINER-->
+		<div ng-view></div>
+	</main>
+<!--FOOTER-->
+	<footer>
+		<div class="footer-container">
+<!--ROW CONTAINER-->
+			<div class="row">
+				<div class="col-3">
+					<div class="footer-item">
+						<p class="footer-header"><strong>o mnie:</strong></p>
+							<p>jestem twórcą niniejszej strony, treści oraz ilustracji. więcej informacji znajdziesz <a href="#!o-mnie" class="submenu-item-hover-underline"><strong>tutaj</strong></a>
+							</p>
+						<hr>
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="footer-item">
+						<p class="footer-header"><strong>kontakt:</strong></p>
+							<p>tel: 534-031-322</p>
+							<p>e-mail: atlas.grzyby@gmail.com</p>
+						<hr>
+					</div>
+				</div>
+				<div class="col-3">
+					<div class="footer-item">
+						<p class="footer-header"><strong>prawa autorskie:</strong></p>
+							<p>wszystkie prawa zastrzeżone</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!--TOP BUTTOM-->
+	<section>
+		<div class="top-button-container">
+			<a href="#">
+				<img src="templates/icons/top-icon.png" class="top-button">
+			</a>
+		</div>
+	</section>
+</body>
+</html>
+</html>
