@@ -22,22 +22,22 @@
 <!--ANGULAR APPLICATION-->
 <body ng-app="atlasApp" ng-controller="myCtrl">
 <!--HEADER CONTAINER-->
-	<header>
+	<header class="header">
 <!--ROW CONTAINER-->
 		<div class="row">
 <!--TITLE CONTAINER-->
 			<div class="col-6">
-				<a href="#" class="title">at:las</a> 
+				<a href="#" class="header__title">at:las</a> 
 			</div>
-			<hr class="hr-head">
+			<hr class="header__hr">
 <!--SOCIALMEDIA CONTAINER-->
 			<div class="col-4">
-				<div class="socialmedia-container">
+				<div class="header__socialmedia__container">
 					<a href="https://www.instagram.com/at_las_/" target="_blank">
-						<img src="templates/icons/instagram-icon.png" class="socialmedia-icon" title="instagram" alt="instagram icon">
+						<img src="templates/icons/instagram-icon.png" class="header__socialmedia__container__icon" title="instagram" alt="instagram icon">
 					</a>
-					<a href="">
-						<img src="templates/icons/facebook-icon.png" class="socialmedia-icon" title="facebook" alt="facebook icon">
+					<a href="https://pl.pinterest.com/atlasgrzyby/" target="_blank">
+						<img src="templates/icons/pinterest-icon.png" class="header__socialmedia__container__icon" title="pinterest" alt="pinterest icon">
 					</a>
 				</div>
 			</div>
@@ -47,231 +47,229 @@
 			<div class="row">
 				<div class="col-6">
 <!--NAV BAR FOR SMALL DEVICES-->
-					<div class="nav-bar-small">
+					<div class="navbar--small">
 <!--MENU BUTTON-->
 						<div ng-click="displayMenuSmall()">
-							<img src="templates/icons/menu-icon.png" class="nav-bar-small-burger">
+							<img src="templates/icons/menu-icon.png" class="navbar--small--burger">
 						</div>
 <!--MENU CONTAINER-->
-							<div ng-show="menuSmall" class="category-container">
+							<div ng-show="menuSmall" class="navbar--small__categoryContainer">
 <!--TIME CONTAINER-->
-								<div ng-click="displayTime()" class="nav-bar-small-item">
-									<img src="templates/icons/time-icon.png" class="category-icon" alt="category icon" title="category icon">
+								<div ng-click="displayTime()" class="navbar--small__item--abc">
+									<img src="templates/icons/time-icon.png" class="navbar--small__categoryIcon" alt="category icon" title="category icon">
 									<p>czas</p>
 								</div>
-								<ul ng-show="timeContainer" class="category-container">
-    								<li class="category">
+								<ul ng-show="timeContainer" class="navbar--small__categoryContainer">
+    								<li class="navbar--small__category">
     									<a href="#!/wiosna">wiosna</a>
     								</li>
-    								<li  class="category">
+    								<li  class="navbar--small__category">
     									<a href="#!/lato">lato</a>
     								</li>
-    								<li  class="category">
+    								<li  class="navbar--small__category">
     									<a href="#!/jesien">jesień</a>
     								</li>
-    								<li class="category">
+    								<li class="navbar--small__category">
     									<a href="#!/no-mushroom">zima</a>
     								</li>
     							</ul>
     							<hr>
 <!--PLACE CONTAINER-->
-								<div ng-click="displayPlace()" class="nav-bar-small-item">
-									<img src="templates/icons/place-icon.png" class="category-icon" alt="category icon" title="category icon">
+								<div ng-click="displayPlace()" class="navbar--small__item">
+									<img src="templates/icons/place-icon.png" class="navbar--small__categoryIcon" alt="category icon" title="category icon">
 									<p>miejsce</p>
 								</div>
-								<ul ng-show="placeContainer" class="category-container">
-   									<li class="category">
+								<ul ng-show="placeContainer" class="navbar--small__categoryContainer">
+   									<li class="navbar--small__category">
     									<a href="#!las-iglasty">las iglasty</a>
     								</li>
-    								<li class="category">
+    								<li class="navbar--small__category">
     									<a href="#!las-mieszany">las liściasty</a>
     								</li>
-    								<li class="category">
+    								<li class="navbar--small__category">
     									<a href="#!no-mushroom">ogródki i łąki</a>
     								</li>
-    								<li class="category">
+    								<li class="navbar--small__category">
     									<a href="#!tereny-podmokle">tereny podmokłe</a>
     								</li>
-    								<li class="category">
+    								<li class="navbar--small__category">
     									<a href="#!drewno">drewno</a>
     								</li>
 								</ul>
 								<hr>
 <!--EAT CONTAINER-->
-								<div ng-click="displayGastro()" class="nav-bar-small-item">
-									<img src="templates/icons/eat-icon.png" class="category-icon" alt="category icon" title="category icon"></img>
+								<div ng-click="displayGastro()" class="navbar--small__item">
+									<img src="templates/icons/eat-icon.png" class="navbar--small__categoryIcon" alt="category icon" title="category icon"></img>
 									<p>gastro</p>
 								</div>
-								<ul ng-show="gastroContainer" class="category-container">
-									<li class="category">
+								<ul ng-show="gastroContainer" class="navbar--small__categoryContainer">
+									<li class="navbar--small__category">
     									<a href="#!jadalny">jadalny</a>
     								</li>
-    								<li class="category">
+    								<li class="navbar--small__category">
     									<a href="#!niezdatny">niezdatny</a>
     								</li>
-    								<li class="category">
+    								<li class="navbar--small__category">
     									<a href="#!trujacy"><span class="bold-color">trujący</span></a>
     								</li>
     							</ul>
     							<hr>
 <!--ABC CONTAINER-->			
-								<div ng-click="displayAbc()" class="nav-bar-small-item">
-									<p class="nav-bar-small-item-abc">ABC</p>
+								<div ng-click="displayAbc()" class="navbar--small__item">
+									<p class="navbar--small__item--abc">ABC</p>
 									<p>alfa</p>
 								</div>
-								<div ng-show="abcContainer" class="category-container-abc">
+								<div ng-show="abcContainer" class="navbar--small__categoryContainer--abc">
     								<div>
-    									<a href="#!no-mushroom" class="category-abc">- a -</a>
+    									<a href="#!no-mushroom" class="navbar--small__category--abc">- a -</a>
     								</div>
     								<div>
-    									<a href="#!abc-b" class="category-abc">- b -</a>
+    									<a href="#!abc-b" class="navbar--small__category--abc">- b -</a>
     								</div>
     								<div>
-    									<a href="#!no-mushroom" class="category-abc">- c -</a>
+    									<a href="#!no-mushroom" class="navbar--small__category--abc">- c -</a>
     								</div>
     								<div>
-    									<a href="#!no-mushroom" class="category-abc">- d -</a>
+    									<a href="#!no-mushroom" class="navbar--small__category--abc">- d -</a>
     								</div>
     								<div>
-    									<a href="#!no-mushroom" class="category-abc">- e -</a>
+    									<a href="#!no-mushroom" class="navbar--small__category--abc">- e -</a>
     								</div>
     								<div>
-    									<a href="#!no-mushroom" class="category-abc">- f -</a>
+    									<a href="#!no-mushroom" class="navbar--small__category--abc">- f -</a>
     								</div>
     								<div>
-    									<a href="#!abc-g" class="category-abc">- g -</a>
+    									<a href="#!abc-g" class="navbar--small__category--abc">- g -</a>
     								</div>
     								<div>
-    									<a href="#!no-mushroom" class="category-abc">- h -</a>
+    									<a href="#!no-mushroom" class="navbar--small__category--abc">- h -</a>
     								</div>
     								<div>
-    									<a href="#!no-mushroom" class="category-abc">- i -</a>
+    									<a href="#!no-mushroom" class="navbar--small__category--abc">- i -</a>
     								</div>
     								<div>
-    									<a href="#!no-mushroom" class="category-abc">- j -</a>
+    									<a href="#!no-mushroom" class="navbar--small__category--abc">- j -</a>
     								</div>
     								<div>
-    									<a href="#!no-mushroom" class="category-abc">- k -</a>
+    									<a href="#!no-mushroom" class="navbar--small__category--abc">- k -</a>
     								</div>
     								<div>
-    									<a href="#!abc-l" class="category-abc">- l -</a>
+    									<a href="#!abc-l" class="navbar--small__category--abc">- l -</a>
     								</div>
     								<div>
-    									<a href="#!abc-m" class="category-abc">- m -</a>
+    									<a href="#!abc-m" class="navbar--small__category--abc">- m -</a>
     								</div>
     								<div>
-    									<a href="#!no-mushroom" class="category-abc">- n -</a>
+    									<a href="#!no-mushroom" class="navbar--small__category--abc">- n -</a>
     								</div>
     								<div>
-    									<a href="#!abc-o" class="category-abc">- o -</a>
+    									<a href="#!abc-o" class="navbar--small__category--abc">- o -</a>
     								</div>
     								<div>
-    									<a href="#!abc-p" class="category-abc">- p -</a>
+    									<a href="#!abc-p" class="navbar--small__category--abc">- p -</a>
     								</div>
     								<div>
-    									<a href="#!no-mushroom" class="category-abc">- r -</a>
+    									<a href="#!no-mushroom" class="navbar--small__category--abc">- r -</a>
     								</div>
     								<div>
-    									<a href="#!no-mushroom" class="category-abc">- s -</a>
+    									<a href="#!no-mushroom" class="navbar--small__category--abc">- s -</a>
     								</div>
     								<div>
-    									<a href="#!no-mushroom" class="category-abc">- t -</a>
+    									<a href="#!no-mushroom" class="navbar--small__category--abc">- t -</a>
     								</div>
     								<div>
-    									<a href="#!no-mushroom" class="category-abc">- u -</a>
+    									<a href="#!no-mushroom" class="navbar--small__category--abc">- u -</a>
     								</div>
     								<div>
-    									<a href="#!abc-w" class="category-abc">- w -</a>
+    									<a href="#!abc-w" class="navbar--small__category--abc">- w -</a>
     								</div>
     								<div>
-    									<a href="#!no-mushroom" class="category-abc">- x -</a>
+    									<a href="#!no-mushroom" class="navbar--small__category--abc">- x -</a>
     								</div>
     								<div>
-    									<a href="#!no-mushroom" class="category-abc">- y -</a>
+    									<a href="#!no-mushroom" class="navbar--small__category--abc">- y -</a>
     								</div>
     								<div>
-    									<a href="#!no-mushroom" class="category-abc">- z -</a>
+    									<a href="#!no-mushroom" class="navbar--small__category--abc">- z -</a>
     								</div>	
     							</div>
     						</div>
 					</div>
 				</div>
 <!--FOR TABLETS AND BIG SCREENS-->
-				<div class="nav-bar-big">
+				<div class="navbar--big">
 <!---TIMIE CONTAINER-->
-					<div class="nav-bar-item"><strong>czas</strong>
+					<div class="navbar--big__item"><strong>czas</strong>
 <!--HOOVER TOP-->
-						<div class="nav-bar-item-hover-top">
-							<div class="submenu-item-top">
-								<img src="templates/icons/time-icon.png" class="category-icon" alt="category icon" title="category icon">
-							</div>
+						<div class="navbar--big__item--hover--top">
+								<img src="templates/icons/time-icon.png" class="navbar--small__categoryIcon" alt="category icon" title="category icon">
 						</div>
 <!--HOOVER BOTTOM-->
-					 	<div class="nav-bar-item-hover-bottom">
+					 	<div class="navbar--big__item--hover--bottom">
 							<ul>
-								<li class="submenu-item">
-									<a href="#!wiosna" class="submenu-item-hover-underline">wiosna</a>
+								<li class="navbar--big__submenuItem">
+									<a href="#!wiosna" class="navbar--big__submenuItem--hoover--underline">wiosna</a>
 								</li>
-								<li class="submenu-item">
-									<a href="#!lato" class="submenu-item-hover-underline">lato</a>
+								<li class="navbar--big__submenuItem">
+									<a href="#!lato" class="navbar--big__submenuItem--hoover--underline">lato</a>
 								</li>
-								<li class="submenu-item">
-									<a href="#!jesien" class="submenu-item-hover-underline">jesień</a>
+								<li class="navbar--big__submenuItem">
+									<a href="#!jesien" class="navbar--big__submenuItem--hoover--underline">jesień</a>
 								</li>
-								<li class="submenu-item">
-									<a href="#!no-mushroom" class="submenu-item-hover-underline">zima</a>
+								<li class="navbar--big__submenuItem">
+									<a href="#!no-mushroom" class="navbar--big__submenuItem--hoover--underline">zima</a>
 								</li>
 							</ul>
 						</div>
 					</div>
 <!--PLACE CONTAINER-->
-					<div class="nav-bar-item"><strong>miejsce</strong>
+					<div class="navbar--big__item"><strong>miejsce</strong>
 <!--HOOVER TOP-->
-						<div class="nav-bar-item-hover-top">
+						<div class="navbar--big__item--hover--top">
 							<div class="submenu-item-top">
-								<img src="templates/icons/place-icon.png" class="category-icon" alt="category icon" title="category icon">
+								<img src="templates/icons/place-icon.png" class="navbar--small__categoryIcon" alt="category icon" title="category icon">
 							</div>
 						</div>
 <!--HOOVER BOTTOM-->
-						<div class="nav-bar-item-hover-bottom">
+						<div class="navbar--big__item--hover--bottom">
 							<ul>
-								<li class="submenu-item">
-									<a href="#!las-iglasty" class="submenu-item-hover-underline">las iglasty</a>
+								<li class="navbar--big__submenuItem">
+									<a href="#!las-iglasty" class="navbar--big__submenuItem--hoover--underline">las iglasty</a>
 								</li>
-								<li class="submenu-item">
-									<a href="#!las-mieszany" class="submenu-item-hover-underline">las mieszany</a>
+								<li class="navbar--big__submenuItem">
+									<a href="#!las-mieszany" class="navbar--big__submenuItem--hoover--underline">las mieszany</a>
 								</li>
-								<li class="submenu-item">
-									<a href="#!no-mushroom" class="submenu-item-hover-underline">ogrody oraz łąki</a>
+								<li class="navbar--big__submenuItem">
+									<a href="#!no-mushroom" class="navbar--big__submenuItem--hoover--underline">ogrody oraz łąki</a>
 								</li>
-								<li class="submenu-item">
-									<a href="#!tereny-podmokle" class="submenu-item-hover-underline">tereny podmokłe</a>
+								<li class="navbar--big__submenuItem">
+									<a href="#!tereny-podmokle" class="navbar--big__submenuItem--hoover--underline">tereny podmokłe</a>
 								</li>
-								<li class="submenu-item">
-									<a href="#!drewno" class="submenu-item-hover-underline">drewno</a>
+								<li class="navbar--big__submenuItem">
+									<a href="#!drewno" class="navbar--big__submenuItem--hoover--underline">drewno</a>
 								</li>
 							</ul>
 						</div>
 					</div>
 <!--EAT CONTAINER-->
-					<div class="nav-bar-item"><strong>gastro</strong>
+					<div class="navbar--big__item"><strong>gastro</strong>
 <!--HOOVER TOP-->
-						<div class="nav-bar-item-hover-top">
+						<div class="navbar--big__item--hover--top">
 							<div class="submenu-item-top">
-								<img src="templates/icons/eat-icon.png" class="category-icon" alt="category icon" title="category icon">
+								<img src="templates/icons/eat-icon.png" class="navbar--small__categoryIcon" alt="category icon" title="category icon">
 							</div>
 						</div>
 <!--HOOVER BOTTOM-->
-						<div class="nav-bar-item-hover-bottom">
+						<div class="navbar--big__item--hover--bottom">
 							<ul>
-								<li class="submenu-item">
-									<a href="#!jadalny" class="submenu-item-hover-underline">jadalny</a>
+								<li class="navbar--big__submenuItem">
+									<a href="#!jadalny" class="navbar--big__submenuItem--hoover--underline">jadalny</a>
 								</li>
-								<li class="submenu-item">
-									<a href="#!niezdatny" class="submenu-item-hover-underline">niezdatny</a>
+								<li class="navbar--big__submenuItem">
+									<a href="#!niezdatny" class="navbar--big__submenuItem--hoover--underline">niezdatny</a>
 								</li>
-								<li class="submenu-item">
-									<a href="#!trujacy" class="submenu-item-hover-underline">
+								<li class="navbar--big__submenuItem">
+									<a href="#!trujacy" class="navbar--big__submenuItem--hoover--underline">
 										<span class="bold-color">trujący</span>
 									</a>
 								</li>
@@ -279,91 +277,91 @@
 						</div>
 					</div>
 <!--ABC CONTAINER-->
-					<div class="nav-bar-item"><strong>alfa</strong>
+					<div class="navbar--big__item"><strong>alfa</strong>
 <!--HOOVER TOP-->
-						<div class="nav-bar-item-hover-top">
+						<div class="navbar--big__item--hover--top">
 							<div class="submenu-item-top">
-								<p class="category-icon">ABC</p>
+								<p class="navbar--small__categoryIcon">ABC</p>
 							</div>
 						</div>
 <!--HOOVER BOTTOM-->
-						<div class="nav-bar-item-hover-bottom">
-							<div class="submenu-item-abc">
-								<a href="#!no-mushroom" class="submenu-item-hover-underline">- a -</a>
+						<div class="navbar--big__item--hover--bottom">
+							<div class="navbar--big__submenuItem--abc">
+								<a href="#!no-mushroom" class="navbar--big__submenuItem--hoover--underline">- a -</a>
 							</div>
-							<div class="submenu-item-abc">
-								<a href="#!abc-b" class="submenu-item-hover-underline">- b -</a>
+							<div class="navbar--big__submenuItem--abc">
+								<a href="#!abc-b" class="navbar--big__submenuItem--hoover--underline">- b -</a>
 							</div>
-							<div class="submenu-item-abc">
-								<a href="#!no-mushroom" class="submenu-item-hover-underline">- c -</a>
+							<div class="navbar--big__submenuItem--abc">
+								<a href="#!no-mushroom" class="navbar--big__submenuItem--hoover--underline">- c -</a>
 							</div>
-							<div class="submenu-item-abc">
-								<a href="#!no-mushroom" class="submenu-item-hover-underline">- d -</a>
+							<div class="navbar--big__submenuItem--abc">
+								<a href="#!no-mushroom" class="navbar--big__submenuItem--hoover--underline">- d -</a>
 							</div>
-							<div class="submenu-item-abc">
-								<a href="#!no-mushroom" class="submenu-item-hover-underline">- e -</a>
+							<div class="navbar--big__submenuItem--abc">
+								<a href="#!no-mushroom" class="navbar--big__submenuItem--hoover--underline">- e -</a>
 							</div>
-							<div class="submenu-item-abc">
-								<a href="#!no-mushroom" class="submenu-item-hover-underline">- f -</a>
+							<div class="navbar--big__submenuItem--abc">
+								<a href="#!no-mushroom" class="navbar--big__submenuItem--hoover--underline">- f -</a>
 							</div>
-							<div class="submenu-item-abc">
-								<a href="#!abc-g" class="submenu-item-hover-underline">- g -</a>
+							<div class="navbar--big__submenuItem--abc">
+								<a href="#!abc-g" class="navbar--big__submenuItem--hoover--underline">- g -</a>
 							</div>
-							<div class="submenu-item-abc">
-								<a href="#!no-mushroom" class="submenu-item-hover-underline">- h -</a>
+							<div class="navbar--big__submenuItem--abc">
+								<a href="#!no-mushroom" class="navbar--big__submenuItem--hoover--underline">- h -</a>
 							</div>
-							<div class="submenu-item-abc">
-								<a href="#!no-mushroom" class="submenu-item-hover-underline">- i -</a>
+							<div class="navbar--big__submenuItem--abc">
+								<a href="#!no-mushroom" class="navbar--big__submenuItem--hoover--underline">- i -</a>
 							</div>
-							<div class="submenu-item-abc">
-								<a href="#!no-mushroom" class="submenu-item-hover-underline">- j -</a>
+							<div class="navbar--big__submenuItem--abc">
+								<a href="#!no-mushroom" class="navbar--big__submenuItem--hoover--underline">- j -</a>
 							</div>
-							<div class="submenu-item-abc">
-								<a href="#!no-mushroom" class="submenu-item-hover-underline">- k -</a>
+							<div class="navbar--big__submenuItem--abc">
+								<a href="#!no-mushroom" class="navbar--big__submenuItem--hoover--underline">- k -</a>
 							</div>
-							<div class="submenu-item-abc">
-								<a href="#!abc-l" class="submenu-item-hover-underline">- l -</a>
+							<div class="navbar--big__submenuItem--abc">
+								<a href="#!abc-l" class="navbar--big__submenuItem--hoover--underline">- l -</a>
 							</div>
-							<div class="submenu-item-abc">
-								<a href="#!abc-m" class="submenu-item-hover-underline">- m -</a>
+							<div class="navbar--big__submenuItem--abc">
+								<a href="#!abc-m" class="navbar--big__submenuItem--hoover--underline">- m -</a>
 							</div>
-							<div class="submenu-item-abc">
-								<a href="#!no-mushroom" class="submenu-item-hover-underline">- n -</a>
+							<div class="navbar--big__submenuItem--abc">
+								<a href="#!no-mushroom" class="navbar--big__submenuItem--hoover--underline">- n -</a>
 							</div>
-							<div class="submenu-item-abc">
-								<a href="#!abc-o" class="submenu-item-hover-underline">- o -</a>
+							<div class="navbar--big__submenuItem--abc">
+								<a href="#!abc-o" class="navbar--big__submenuItem--hoover--underline">- o -</a>
 							</div>
-							<div class="submenu-item-abc">
-								<a href="#!abc-p" class="submenu-item-hover-underline">- p -</a>
+							<div class="navbar--big__submenuItem--abc">
+								<a href="#!abc-p" class="navbar--big__submenuItem--hoover--underline">- p -</a>
 							</div>
-							<div class="submenu-item-abc">
-								<a href="#!no-mushroom" class="submenu-item-hover-underline">- r -</a>
+							<div class="navbar--big__submenuItem--abc">
+								<a href="#!no-mushroom" class="navbar--big__submenuItem--hoover--underline">- r -</a>
 							</div>
-							<div class="submenu-item-abc">
-								<a href="#!no-mushroom" class="submenu-item-hover-underline">- s -</a>
+							<div class="navbar--big__submenuItem--abc">
+								<a href="#!no-mushroom" class="navbar--big__submenuItem--hoover--underline">- s -</a>
 							</div>
-							<div class="submenu-item-abc">
-								<a href="#!no-mushroom" class="submenu-item-hover-underline">- t -</a>
+							<div class="navbar--big__submenuItem--abc">
+								<a href="#!no-mushroom" class="navbar--big__submenuItem--hoover--underline">- t -</a>
 							</div>
-							<div class="submenu-item-abc">
-								<a href="#!no-mushroom" class="submenu-item-hover-underline">- u -</a>
+							<div class="navbar--big__submenuItem--abc">
+								<a href="#!no-mushroom" class="navbar--big__submenuItem--hoover--underline">- u -</a>
 							</div>
-							<div class="submenu-item-abc">
-								<a href="#!abc-w" class="submenu-item-hover-underline">- w -</a>
+							<div class="navbar--big__submenuItem--abc">
+								<a href="#!abc-w" class="navbar--big__submenuItem--hoover--underline">- w -</a>
 							</div>
-							<div class="submenu-item-abc">
-								<a href="#!no-mushroom" class="submenu-item-hover-underline">- x -</a>
+							<div class="navbar--big__submenuItem--abc">
+								<a href="#!no-mushroom" class="navbar--big__submenuItem--hoover--underline">- x -</a>
 							</div>
-							<div class="submenu-item-abc">
-								<a href="#!no-mushroom" class="submenu-item-hover-underline">- y -</a>
+							<div class="navbar--big__submenuItem--abc">
+								<a href="#!no-mushroom" class="navbar--big__submenuItem--hoover--underline">- y -</a>
 							</div>
-							<div class="submenu-item-abc">
-								<a href="#!no-mushroom" class="submenu-item-hover-underline">- z -</a>
+							<div class="navbar--big__submenuItem--abc">
+								<a href="#!no-mushroom" class="navbar--big__submenuItem--hoover--underline">- z -</a>
 							</div>
 						</div>
 					</div>
 				</div>
-		</nav>
+	   	</nav>
 	</header>
 <!--MAIN CONTAINER-->	
 	<main>
@@ -372,28 +370,28 @@
 	</main>
 <!--FOOTER-->
 	<footer>
-		<div class="footer-container">
+		<div class="footer">
 <!--ROW CONTAINER-->
 			<div class="row">
 				<div class="col-3">
-					<div class="footer-item">
-						<p class="footer-header"><strong>o mnie:</strong></p>
-							<p>jestem twórcą niniejszej strony, treści oraz ilustracji. więcej informacji znajdziesz <a href="#!o-mnie" class="submenu-item-hover-underline"><strong>tutaj</strong></a>
+					<div class="footer--item">
+						<p class="footer--header"><strong>o mnie:</strong></p>
+							<p>jestem twórcą niniejszej strony, treści oraz ilustracji. więcej informacji znajdziesz <a href="#!o-mnie" class="navbar--big__submenuItem--hoover--underline"><strong>tutaj</strong></a>
 							</p>
 						<hr>
 					</div>
 				</div>
 				<div class="col-4">
-					<div class="footer-item">
-						<p class="footer-header"><strong>kontakt:</strong></p>
+					<div class="footer--item">
+						<p class="footer--header"><strong>kontakt:</strong></p>
 							<p>tel: 534-031-322</p>
 							<p>e-mail: atlas.grzyby@gmail.com</p>
 						<hr>
 					</div>
 				</div>
 				<div class="col-3">
-					<div class="footer-item">
-						<p class="footer-header"><strong>prawa autorskie:</strong></p>
+					<div class="footer--item">
+						<p class="footer--header"><strong>prawa autorskie:</strong></p>
 							<p>wszystkie prawa zastrzeżone</p>
 					</div>
 				</div>
@@ -402,12 +400,12 @@
 	</footer>
 	<!--TOP BUTTOM-->
 	<section>
-		<div class="top-button-container">
+		<div class="topButton__container">
 			<a href="#">
-				<img src="templates/icons/top-icon.png" class="top-button">
+				<img src="templates/icons/top-icon.png" class="topButton">
 			</a>
 		</div>
 	</section>
 </body>
 </html>
-</html>
+
